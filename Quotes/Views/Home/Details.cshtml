@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model Quote 
+
+<div class="card">
+
+    <div class="card-header container">
+
+        <div class="row">
+            <p class="col-9">Quote</p>
+            <span class="col-3 fw-bold pt-2">#@Model.quoteID</span>
+        </div>
+    </div>
+
+    <div class="card-body ps-4">
+        <p>@Model.quote</p>
+        <ul>
+            <li><strong>Author: </strong>@Model.author</li>
+            <li><strong>Date: </strong>@Model.date</li>
+            <li><strong>Subject: </strong>@Model.subject</li>
+            <li><strong>Citation: </strong>@Model.citation</li>
+        </ul>
+    </div>
+    <div><button asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@Model.quoteID">Edit</button></div>
+    <div><button asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@Model.quoteID">Delete</button></div>
+
+</div>
+
+<br />
